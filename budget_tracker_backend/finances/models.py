@@ -33,7 +33,7 @@ class Budget(models.Model):
     monthly_budget = models.DecimalField(max_digits=10, decimal_places=2)
     month = models.DateField(default=default_month)
     class Meta:
-        unique_together = ['user', 'month']  # Ensure only one budget per user per month
+        unique_together = ['user', 'month']  
 
     def __str__(self):
         return f"{self.user.username} - {self.month} - {self.monthly_budget}"

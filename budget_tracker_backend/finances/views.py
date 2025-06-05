@@ -15,7 +15,7 @@ from calendar import monthrange
 @permission_classes([IsAuthenticated])
 def monthly_report(request):
     user = request.user
-    month_param = request.query_params.get('month')  # format: YYYY-MM
+    month_param = request.query_params.get('month')  
 
     if not month_param:
         return Response({"error": "month query param is required. Format: YYYY-MM"}, status=400)
